@@ -1,0 +1,115 @@
+<style>
+  .home-container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .hero {
+    background: linear-gradient(to right, #4e54c8, #8f94fb);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+
+  .cta-buttons {
+    margin-top: 20px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 0 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn.primary {
+    background-color: #ffffff;
+    color: #4e54c8;
+  }
+
+  .btn.primary:hover {
+    background-color: #e0e0ff;
+  }
+
+  .btn.secondary {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ccc;
+  }
+
+  .btn.secondary:hover {
+    background-color: #e2e6ea;
+  }
+
+  .content {
+    flex-grow: 1;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+  }
+
+  .intro {
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .intro h2 {
+    margin-bottom: 15px;
+  }
+
+  .intro ul {
+    padding-left: 20px;
+  }
+
+  .intro li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #4e54c8;
+    color: white;
+  }
+</style>
+
+<div class="home-container">
+  <header class="hero">
+    <h1>Welcome to Task Manager</h1>
+    
+    <div class="cta-buttons">
+      <a routerLink="/album" class="btn primary">Get Started</a>
+      <a routerLink="/form" class="btn primary">Provide Feedback</a>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="intro">
+      <h2>About This Application</h2>
+      <p>This application includes the following pages:</p>
+      <ul>
+        <li><strong>Albums Page:</strong> Displays real-time data fetched from a public API for dynamic insights.</li>
+        <li><strong>Form Page:</strong> A responsive form allowing users to submit feedback.</li>
+
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Angular-Assignment-Kathan</p>
+  </footer>
+</div>

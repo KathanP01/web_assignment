@@ -1,0 +1,73 @@
+<style>
+  form {
+    max-width: 500px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .error {
+    color: red;
+    font-size: 0.875em;
+    margin-top: 5px;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+</style>
+
+<h2>Feedback Form</h2>
+<form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" novalidate>
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" />
+    <div class="error" *ngIf="feedbackForm.get('name')?.invalid && feedbackForm.get('name')?.touched">
+      Name is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" />
+    <div class="error" *ngIf="feedbackForm.get('email')?.invalid && feedbackForm.get('email')?.touched">
+      Valid email is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="message">Message:</label>
+    <textarea id="message" rows="4" formControlName="message"></textarea>
+    <div class="error" *ngIf="feedbackForm.get('message')?.invalid && feedbackForm.get('message')?.touched">
+      Message is required.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="feedbackForm.invalid">Submit</button>
+</form>
